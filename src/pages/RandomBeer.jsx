@@ -23,9 +23,7 @@ function RandomBeer() {
 
   if (fetching) {
     return (
-      <div>
-        <ClipLoader color="#2F6DA8" size="50px" />
-      </div>
+      <div>Loading!!!</div>
     );
   }
 
