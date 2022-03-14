@@ -39,8 +39,7 @@ function NewBeer() {
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name: </label>
         <input type="text" name="name" value={name}        
-        onChange={(e) => setName(e.target.value)}
-        ></input>
+        onChange={(e) => setName(e.target.value)}></input>
         
         <br />
 
@@ -64,13 +63,11 @@ function NewBeer() {
           onChange={(e) => setBrewersTips(e.target.value)}></input>
         <br />
 
-        <label htmlFor="attenuation_level">Attenuation Level: </label>
-        <input
+        <label htmlFor="attenuation_level">Attenuation Level: </label><input
           type="number"
           name="attenuation_level"
           value={attenuation_level}
-          onChange={(e) => setAattenuationLevel(e.target.value)}
-        ></input>
+          onChange={(e) => setAattenuationLevel(e.target.value)}></input>
         <br />
 
         <label htmlFor="contributed_by">Contributed By: </label>

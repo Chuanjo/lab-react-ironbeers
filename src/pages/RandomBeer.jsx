@@ -1,7 +1,6 @@
 import React from "react";
-import Header from "../components/Header";
 import { useState, useEffect } from "react";
-import ClipLoader from "react-spinners/ClipLoader";
+import Header from "../components/Header";
 import axios from "axios";
 
 
@@ -31,7 +30,7 @@ function RandomBeer() {
     <div>
       <Header />
       <h2>RandomBeer</h2>
-      <img src={beersRandom.image_url} alt="image" width="100px" />
+      <img src={beersRandom.image_url} alt="beer" width="100px" />
       <h4>{beersRandom.name}</h4>
       <p>{beersRandom.tagline}</p>
       <p>{beersRandom.first_brewed}</p>

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
@@ -7,7 +8,6 @@ import Header from "../components/Header";
 function DetailsBeer() {
   const [beersDetails, setBeerDetails] = useState(null);
   const [fetching, setFetching] = useState(true);
-
   const { id } = useParams();
 
   useEffect(() => {
@@ -15,9 +15,7 @@ function DetailsBeer() {
   }, []);
 
   const getBeerDetails = async () => {
-    const response = await axios.get(
-      `https://ih-beers-api2.herokuapp.com/beers/${id}`
-    );
+    const response = await axios.get(`https://ih-beers-api2.herokuapp.com/beers/${id}`);
     setBeerDetails(response.data);
     setFetching(false);
   };
