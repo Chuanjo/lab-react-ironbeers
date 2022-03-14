@@ -26,9 +26,12 @@ function NewBeer() {
       attenuation_level,
       contributed_by
     }
-    await axios.post("https://ih-beers-api2.herokuapp.com/beers/new", newBeer);
-
-    navigate("/beers");
+    try {
+      await axios.post("https://ih-beers-api2.herokuapp.com/beers/new", newBeer);
+      navigate("/beers");
+    } catch(err){
+      navigate("err")
+    };
   };
 
   return (

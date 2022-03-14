@@ -2,23 +2,29 @@
 import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Header from "../components/Header";
+
 
 function DetailsBeer() {
   const [beersDetails, setBeerDetails] = useState(null);
   const [fetching, setFetching] = useState(true);
   const { id } = useParams();
-
+  const navigate = useNavigate();
+  
   useEffect(() => {
     getBeerDetails();
   }, []);
 
   const getBeerDetails = async () => {
-    const response = await axios.get(`https://ih-beers-api2.herokuapp.com/beers/${id}`);
-    setBeerDetails(response.data);
-    setFetching(false);
-  };
+    try {
+      const response = await axios.get(`https://ih-beers-api2.herokuapp.com/beers/${id}`);
+      setBeerDetails(response.data);
+      setFetching(false);
+    } catch(err){
+    navigate("err")
+    };
+  } 
 
   if (fetching) {
     return (
